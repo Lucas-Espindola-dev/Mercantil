@@ -11,6 +11,11 @@
   </header>
 
   <main>
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'products_view' %}">Mercantilize</a>
+        </div>
+      </nav>
     {% block content %}
     {% endblock %}
   </main>
