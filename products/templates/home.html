@@ -15,15 +15,15 @@
   </thead>
 
   <tbody>
-    {% for produto in products %}
+    {% for product in products %}
     <tr>
       <th scope="row">1</th>
-      <td>{{ produto.id }}</td>
-      <td>{{ produto.name }}</td>
-      <td>{{ produto.brand }}</td>
-      <td>{{ produto.price }}</td>
-      <td>{{ produto.volume }}</td>
-      <td>{{ produto.volume_metric }}</td>
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.brand }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.volume }}</td>
+      <td>{{ product.volume_metric }}</td>
     </tr>
     {% endfor %}
   </tbody>
