@@ -17,13 +17,13 @@
   <tbody>
     {% for product in products %}
     <tr>
-      <th scope="row">1</th>
-      <td><a>{{ product.id }}</a></td>
+      <td><a href="{% url 'products:product_detail' product.pk %}">{{ product.id }}</a></td>
       <td>{{ product.name }}</td>
       <td>{{ product.brand }}</td>
       <td>{{ product.price }}</td>
       <td>{{ product.volume }}</td>
       <td>{{ product.volume_metric }}</td>
+      <td>{{ product.description }}</td>
     </tr>
     {% endfor %}
   </tbody>
