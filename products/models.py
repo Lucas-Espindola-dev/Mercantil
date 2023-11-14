@@ -18,6 +18,7 @@ class Product(models.Model):
     volume = models.FloatField()
     volume_metric = models.CharField(max_length=50)
     bars_code = models.IntegerField(unique=True)
+    photo = models.ImageField(upload_to='products/', blank=True, null=True)
 
     def __str__(self):
         return self.name
