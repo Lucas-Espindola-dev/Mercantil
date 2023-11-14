@@ -1,4 +1,4 @@
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DetailView
 from products.models import Product
 from products.forms import ProductForm
 
@@ -19,3 +19,7 @@ class NewProduct(CreateView):
     template_name = 'new_product.html'
     success_url = '/'
 
+
+class ProductDetail(DetailView):
+    model = Product
+    template_name = 'product_detail.html'
