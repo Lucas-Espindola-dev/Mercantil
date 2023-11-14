@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="card" style="width: 30rem; text-align: center; margin: 20px auto 0; max-width: 500px; margin-bottom: 20px;">
+<div class="card" style="width: 15rem; text-align: center; margin: 20px auto 0; max-width: 500px; margin-bottom: 20px;">
   {% if object.photo %}
-  <img src="{{ object.photo }}" class="card-img-top" alt="{{ object.brand }} - {{ object.name }}">
+  <img src="{{ object.photo.url }}" class="card-img-top" alt="{{ object.brand }} - {{ object.name }}">
   {% else %}
     <p class="no-photo"> Foto Não Disponivel</p>
   {% endif %}
@@ -13,7 +13,7 @@
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">{{ object.volume }} {{ object.volume_metric }}</li>
-    <li class="list-group-item">R${{ object.price }}</li>
+    <li class="list-group-item">{{ object.price }} Reais</li>
   </ul>
 
 </div>
