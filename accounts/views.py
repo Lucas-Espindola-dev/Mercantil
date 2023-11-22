@@ -21,7 +21,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('products_view')
+            return redirect('products:products_view')
         else:
             login_form = AuthenticationForm()
 
@@ -32,4 +32,4 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('products_view')
+    return redirect('products:products_view')
