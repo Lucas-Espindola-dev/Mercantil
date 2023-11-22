@@ -20,11 +20,21 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'products:new_product' %}">Cadastro de produto</a>
                     </li>
+                    {% endif %}
                 </ul>
                 <ul class="navbar-nav">
+                    {% if not user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'accounts:login' %}">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <ul class="navbar-nav">
+                    {% if not user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'accounts:register' %}">Registrar Usuário</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
