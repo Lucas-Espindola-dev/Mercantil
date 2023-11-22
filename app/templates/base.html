@@ -36,6 +36,13 @@
                     </li>
                     {% endif %}
                 </ul>
+                <ul class="navbar-nav">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'accounts:logout' %}">Logout</a>
+                    </li>
+                    {% endif %}
+                </ul>
             </div>
         </div>
     </nav>
