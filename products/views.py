@@ -42,4 +42,6 @@ class ProductUpdateView(UpdateView):
 @method_decorator(login_required(login_url='accounts:login'), name='dispatch')
 class ProductDeleteView(DeleteView):
     model = Product
+    template_name = 'product_delete.html'
+    success_url = '/'
 
