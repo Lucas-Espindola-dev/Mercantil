@@ -1,6 +1,6 @@
-from django.views.generic import ListView, CreateView, DetailView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView
 from products.models import Product
-from products.forms import ProductForm
+from products.forms import ProductModelForm
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 
@@ -23,6 +23,11 @@ class ProductDetail(DetailView):
 @method_decorator(login_required(login_url='accounts:login'), name='dispatch')
 class NewProduct(CreateView):
     model = Product
-    form_class = ProductForm
+    form_class = ProductModelForm
     template_name = 'new_product.html'
     success_url = '/'
+
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    form_class = ProductModelForm
