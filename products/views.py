@@ -28,6 +28,7 @@ class NewProduct(CreateView):
     success_url = '/'
 
 
+@method_decorator(login_required(login_url='accounts:login'), name='dispatch')
 class ProductUpdateView(UpdateView):
     model = Product
     form_class = ProductModelForm
