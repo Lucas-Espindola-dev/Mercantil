@@ -3,6 +3,7 @@ from products.models import Product
 from products.forms import ProductModelForm
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
 
 
 class ProductsList(ListView):
@@ -32,3 +33,7 @@ class NewProduct(CreateView):
 class ProductUpdateView(UpdateView):
     model = Product
     form_class = ProductModelForm
+    template_name = 'product_update.html'
+
+    def get_success_url(self):
+        return reverse_lazy('products:product_detail', kwargs={'pk': self.object.pk})
