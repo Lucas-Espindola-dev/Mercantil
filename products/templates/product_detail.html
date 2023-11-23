@@ -17,6 +17,7 @@
   </ul>
   <div class="buttons-container">
     <a href="{% url 'products:product_update' pk=object.pk %}" class="btn btn-primary">Editar</a>
+    <a href="{% url 'products:product_delete' pk=object.pk %}" class="btn btn-danger">Deletar</a>
   </div>
 </div>
 
