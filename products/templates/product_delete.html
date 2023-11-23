@@ -10,7 +10,7 @@
             <form method="post">
                 {% csrf_token %}
                 <div class="buttons-container">
-                    <button type="submit" class="btn btn-outliine-danger">Deletar Carro</button>
+                    <button type="submit" class="btn btn-outline-danger">Deletar Carro</button>
                     <a href="{% url 'products:product_update' pk=object.pk %}" class="btn btn-outline-secondary">Cancelar</a>
                 </div>
             </form>
