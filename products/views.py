@@ -1,4 +1,4 @@
-from django.views.generic import ListView, CreateView, DetailView, UpdateView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from products.models import Product
 from products.forms import ProductModelForm
 from django.utils.decorators import method_decorator
@@ -37,3 +37,9 @@ class ProductUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('products:product_detail', kwargs={'pk': self.object.pk})
+
+
+@method_decorator(login_required(login_url='accounts:login'), name='dispatch')
+class ProductDeleteView(DeleteView):
+    model = Product
+
